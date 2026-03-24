@@ -95,26 +95,31 @@ header {
 
 <div class="grid">
 
-    <div class="card" onclick="openGame('https://example.com/minecraft')">
+    <!-- Minecraft -->
+    <div class="card" onclick="openGame('https://WazKuz.github.io/mine')">
         <img src="https://img.redbull.com/images/c_crop,w_2640,h_1320,x_190,y_0/c_auto,w_1200,h_630/f_auto,q_auto/redbullcom/2025/8/11/dcusojkfgapu4zxe3gtb/minecraft-landscape">
         <h3>Minecraft</h3>
     </div>
 
+    <!-- Among Us -->
     <div class="card" onclick="openGame('https://example.com/amongus')">
         <img src="https://media.wired.com/photos/620581d7c228dc232641feaa/191:100/w_1280,c_limit/Games-Innersloth-Among-Us-Key-Art.jpg">
         <h3>Among Us</h3>
     </div>
 
+    <!-- Geometry Dash -->
     <div class="card" onclick="openGame('https://WazKuz.github.io/geo')">
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCUiJgoAoVVcg9FA3_3NHHC4SkocpWthaYbg&s">
         <h3>Geometry Dash</h3>
     </div>
 
+    <!-- Subway Surfers -->
     <div class="card" onclick="openGame('https://example.com/subway')">
         <img src="https://img.poki-cdn.com/cdn-cgi/image/q=78,scq=50,width=1200,height=1200,fit=cover,f=png/9e89c8fe71f2e1179437b6b6d7e3a5a1/subway-surfers.png">
         <h3>Subway Surfers</h3>
     </div>
 
+    <!-- Slope -->
     <div class="card" onclick="openGame('https://example.com/slope')">
         <img src="https://slopegame-online.com/slope.webp">
         <h3>Slope</h3>
