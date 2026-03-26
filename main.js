@@ -107,10 +107,10 @@ header {
         <h3>Among Us</h3>
     </div>
 
-    <!-- Geometry Dash -->
+    <!-- Crossy Road -->
     <div class="card" onclick="openGame('https://WazKuz.github.io/geo')">
         <img src="https://images.squarespace-cdn.com/content/v1/5e3bb512203ccf3516032e33/a0e8f281-94c0-47c2-a96c-b729daccf938/CRClassic_Banner_2000x1500.png">
-        <h3>Geometry Dash</h3>
+        <h3>Crossy Road</h3>
     </div>
 
     <!-- Subway Surfers -->
