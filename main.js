@@ -7,35 +7,35 @@ body {
     color: white;
 }
 
+/* HEADER TICKER */
 header {
-    padding: 20px;
-    text-align: center;
-    font-size: 28px;
+    background: #020617;
+    overflow: hidden;
+    position: relative;
+    padding: 15px 0;
+    border-bottom: 2px solid #2563eb;
+}
+
+.ticker {
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.ticker span {
+    display: inline-block;
+    padding-left: 100%;
+    animation: scrollTicker 15s linear infinite;
     font-weight: bold;
-
-    /* Moving gradient */
-    background: linear-gradient(-45deg, #2563eb, #9333ea, #22c55e, #f59e0b);
-    background-size: 400% 400%;
-    animation: gradientMove 6s ease infinite;
-
-    /* Optional glow */
-    color: white;
-    letter-spacing: 1px;
+    font-size: 18px;
+    color: #00f5ff;
 }
 
-/* Animation */
-@keyframes gradientMove {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
+@keyframes scrollTicker {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
 }
 
+/* SEARCH */
 .search {
     display: flex;
     justify-content: center;
@@ -51,6 +51,7 @@ header {
     font-size: 16px;
 }
 
+/* GRID */
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -81,6 +82,7 @@ header {
     text-align: center;
 }
 
+/* MODAL */
 .modal {
     display: none;
     position: fixed;
@@ -108,7 +110,11 @@ header {
 }
 </style>
 
-<header>🎮 Unblocked Games Hub</header>
+<header>
+    <div class="ticker">
+        <span id="tickerText">Loading...</span>
+    </div>
+</header>
 
 <div class="search">
     <input type="text" placeholder="Search games..." onkeyup="searchGames(this.value)">
@@ -116,31 +122,26 @@ header {
 
 <div class="grid">
 
-    <!-- Candy Crush Saga -->
     <div class="card" onclick="openGame('https://WazKuz.github.io/mine')">
         <img src="https://i.pinimg.com/736x/5f/7b/a4/5f7ba42baff0614371954c9625d52cc4.jpg">
         <h3>Candy Crush Saga</h3>
     </div>
 
-    <!-- Among Us -->
     <div class="card" onclick="openGame('https://example.com/amongus')">
         <img src="https://media.wired.com/photos/620581d7c228dc232641feaa/191:100/w_1280,c_limit/Games-Innersloth-Among-Us-Key-Art.jpg">
         <h3>Among Us</h3>
     </div>
 
-    <!-- Crossy Road -->
     <div class="card" onclick="openGame('https://WazKuz.github.io/geo')">
         <img src="https://images.squarespace-cdn.com/content/v1/5e3bb512203ccf3516032e33/a0e8f281-94c0-47c2-a96c-b729daccf938/CRClassic_Banner_2000x1500.png">
         <h3>Crossy Road</h3>
     </div>
 
-    <!-- Chess -->
     <div class="card" onclick="openGame('https://WazKuz.github.io/dash')">
-        <img src="https://images.unsplash.com/photo-1654457066813-234e82a5e3e0?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8Y2hlc3MlMjB3YWxscGFwZXJ8ZW58MHx8MHx8fDA%3D">
+        <img src="https://images.unsplash.com/photo-1654457066813-234e82a5e3e0">
         <h3>Chess</h3>
     </div>
 
-    <!-- Slope -->
     <div class="card" onclick="openGame('https://example.com/slope')">
         <img src="https://slopegame-online.com/slope.webp">
         <h3>Slope</h3>
@@ -154,6 +155,7 @@ header {
 </div>
 `;
 
+/* GAME FUNCTIONS */
 window.openGame = function(url) {
     document.getElementById("gameModal").style.display = "flex";
     document.getElementById("gameFrame").src = url;
@@ -173,3 +175,54 @@ window.searchGames = function(query) {
         card.style.display = title.includes(query) ? "block" : "none";
     });
 }
+
+/* --- PLAYTIME TRACKER --- */
+let startTime = Date.now();
+let savedTime = parseInt(localStorage.getItem("playtime") || "0");
+
+setInterval(() => {
+    let total = savedTime + (Date.now() - startTime);
+    localStorage.setItem("playtime", total);
+}, 1000);
+
+function formatTime(ms) {
+    let seconds = Math.floor(ms / 1000);
+    let h = Math.floor(seconds / 3600);
+    let m = Math.floor((seconds % 3600) / 60);
+    let s = seconds % 60;
+    return \`\${h}h \${m}m \${s}s\`;
+}
+
+/* --- SESSION COUNTER --- */
+let sessions = parseInt(localStorage.getItem("sessions") || "0") + 1;
+localStorage.setItem("sessions", sessions);
+
+/* --- LIVE PLAYER COUNT (SIMULATED BUT SMOOTH) --- */
+let players = 120 + Math.floor(Math.random() * 30);
+
+setInterval(() => {
+    players += Math.floor(Math.random() * 5 - 2); // small fluctuation
+    if (players < 80) players = 80;
+    if (players > 200) players = 200;
+}, 2000);
+
+/* --- TICKER SYSTEM --- */
+const ticker = document.getElementById("tickerText");
+
+function updateTicker() {
+    let playtime = formatTime(savedTime + (Date.now() - startTime));
+
+    let messages = [
+        "🔥 Welcome to Unblocked Games Hub",
+        \`👥 Players Online: \${players}\`,
+        \`⏱️ Your Playtime: \${playtime}\`,
+        \`🎮 Sessions Played: \${sessions}\`,
+        "🚀 New games added weekly",
+        "💡 Try every game for the best experience"
+    ];
+
+    ticker.textContent = messages[Math.floor(Math.random() * messages.length)];
+}
+
+setInterval(updateTicker, 3000);
+updateTicker();
