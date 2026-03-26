@@ -95,10 +95,10 @@ header {
 
 <div class="grid">
 
-    <!-- Minecraft -->
+    <!-- Candy Crush Saga -->
     <div class="card" onclick="openGame('https://WazKuz.github.io/mine')">
-        <img src="https://img.redbull.com/images/c_crop,w_2640,h_1320,x_190,y_0/c_auto,w_1200,h_630/f_auto,q_auto/redbullcom/2025/8/11/dcusojkfgapu4zxe3gtb/minecraft-landscape">
-        <h3>Minecraft</h3>
+        <img src="https://i.pinimg.com/736x/5f/7b/a4/5f7ba42baff0614371954c9625d52cc4.jpg">
+        <h3>Candy Crush Saga</h3>
     </div>
 
     <!-- Among Us -->
