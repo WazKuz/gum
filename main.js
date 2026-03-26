@@ -113,10 +113,10 @@ header {
         <h3>Crossy Road</h3>
     </div>
 
-    <!-- Subway Surfers -->
-    <div class="card" onclick="openGame('https://example.com/subway')">
-        <img src="https://img.poki-cdn.com/cdn-cgi/image/q=78,scq=50,width=1200,height=1200,fit=cover,f=png/9e89c8fe71f2e1179437b6b6d7e3a5a1/subway-surfers.png">
-        <h3>Subway Surfers</h3>
+    <!-- Chess -->
+    <div class="card" onclick="openGame('https://WazKuz.github.io/dash')">
+        <img src="https://images.unsplash.com/photo-1654457066813-234e82a5e3e0?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8Y2hlc3MlMjB3YWxscGFwZXJ8ZW58MHx8MHx8fDA%3D">
+        <h3>Chess</h3>
     </div>
 
     <!-- Slope -->
