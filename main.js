@@ -10,7 +10,7 @@ body {
 header {
     padding: 20px;
     text-align: center;
-    background: linear-gradient(90deg, #2563eb, #9333ea);
+    background: url("https://us.123rf.com/450wm/inventoris/inventoris1603/inventoris160300345/53033846-blue-abstract-striped-textured-geometric-pattern.jpg?ver=6");
     font-size: 28px;
     font-weight: bold;
 }
