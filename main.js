@@ -10,9 +10,30 @@ body {
 header {
     padding: 20px;
     text-align: center;
-    background: url("https://us.123rf.com/450wm/inventoris/inventoris1603/inventoris160300345/53033846-blue-abstract-striped-textured-geometric-pattern.jpg?ver=6");
     font-size: 28px;
     font-weight: bold;
+
+    /* Moving gradient */
+    background: linear-gradient(-45deg, #2563eb, #9333ea, #22c55e, #f59e0b);
+    background-size: 400% 400%;
+    animation: gradientMove 6s ease infinite;
+
+    /* Optional glow */
+    color: white;
+    letter-spacing: 1px;
+}
+
+/* Animation */
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 .search {
