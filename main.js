@@ -190,18 +190,18 @@ function formatTime(ms) {
     let h = Math.floor(seconds / 3600);
     let m = Math.floor((seconds % 3600) / 60);
     let s = seconds % 60;
-    return \`\${h}h \${m}m \${s}s\`;
+    return h + "h " + m + "m " + s + "s";
 }
 
 /* --- SESSION COUNTER --- */
 let sessions = parseInt(localStorage.getItem("sessions") || "0") + 1;
 localStorage.setItem("sessions", sessions);
 
-/* --- LIVE PLAYER COUNT (SIMULATED BUT SMOOTH) --- */
+/* --- LIVE PLAYER COUNT --- */
 let players = 120 + Math.floor(Math.random() * 30);
 
 setInterval(() => {
-    players += Math.floor(Math.random() * 5 - 2); // small fluctuation
+    players += Math.floor(Math.random() * 5 - 2);
     if (players < 80) players = 80;
     if (players > 200) players = 200;
 }, 2000);
@@ -214,9 +214,9 @@ function updateTicker() {
 
     let messages = [
         "🔥 Welcome to Unblocked Games Hub",
-        \`👥 Players Online: \${players}\`,
-        \`⏱️ Your Playtime: \${playtime}\`,
-        \`🎮 Sessions Played: \${sessions}\`,
+        "👥 Players Online: " + players,
+        "⏱️ Your Playtime: " + playtime,
+        "🎮 Sessions Played: " + sessions,
         "🚀 New games added weekly",
         "💡 Try every game for the best experience"
     ];
