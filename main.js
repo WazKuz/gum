@@ -1,3 +1,4 @@
+<script>
 document.body.innerHTML = `
 <style>
 body {
@@ -112,7 +113,7 @@ header {
 
 <header>
     <div class="ticker">
-        <span id="tickerText">Loading...</span>
+        <span id="tickerText">NEW GAMES COMING SOON</span>
     </div>
 </header>
 
@@ -127,9 +128,9 @@ header {
         <h3>Candy Crush Saga</h3>
     </div>
 
-    <div class="card" onclick="openGame('https://example.com/amongus')">
-        <img src="https://media.wired.com/photos/620581d7c228dc232641feaa/191:100/w_1280,c_limit/Games-Innersloth-Among-Us-Key-Art.jpg">
-        <h3>Among Us</h3>
+    <div class="card" onclick="openGame('https://wazkuz.github.io/geom/')">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCUiJgoAoVVcg9FA3_3NHHC4SkocpWthaYbg&s">
+        <h3>Geometry Dash</h3>
     </div>
 
     <div class="card" onclick="openGame('https://WazKuz.github.io/geo')">
@@ -142,7 +143,7 @@ header {
         <h3>Chess</h3>
     </div>
 
-    <div class="card" onclick="openGame('https://example.com/slope')">
+    <div class="card" onclick="openGame('https://wazkuz.github.io/geom/')">
         <img src="https://slopegame-online.com/slope.webp">
         <h3>Slope</h3>
     </div>
@@ -206,23 +207,5 @@ setInterval(() => {
     if (players > 200) players = 200;
 }, 2000);
 
-/* --- TICKER SYSTEM --- */
-const ticker = document.getElementById("tickerText");
-
-function updateTicker() {
-    let playtime = formatTime(savedTime + (Date.now() - startTime));
-
-    let messages = [
-        "🔥 Welcome to Unblocked Games Hub",
-        "👥 Players Online: " + players,
-        "⏱️ Your Playtime: " + playtime,
-        "🎮 Sessions Played: " + sessions,
-        "🚀 New games added weekly",
-        "💡 Try every game for the best experience"
-    ];
-
-    ticker.textContent = messages[Math.floor(Math.random() * messages.length)];
-}
-
-setInterval(updateTicker, 3000);
-updateTicker();
+/* ticker system removed */
+</script>
